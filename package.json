@@ -1,5 +1,5 @@
 {
-  "name": "generator-gulp-simplelivereload",
+  "name": "generator-gulp-livereload",
   "version": "0.0.1",
   "description": "A Yeoman webapp generator that leverages gulp streaming build system.",
   "keywords": [
@@ -7,8 +7,8 @@
     "gulp",
     "gulp-plugin"
   ],
-  "homepage": "https://github.com/hajimenagata/generator-gulp-simplelivereload",
-  "bugs": "https://github.com/hajimenagata/generator-gulp-simplelivereload/issues",
+  "homepage": "https://github.com/hajimenagata/generator-gulp-livereload",
+  "bugs": "https://github.com/hajimenagata/generator-gulp-livereload/issues",
   "author": {
     "name": "Hajime Nagata",
     "email": "hajime.nagata@ncreate.net",
@@ -17,7 +17,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hajimenagata/generator-gulp-simplelivereload.git"
+    "url": "git://github.com/hajimenagata/generator-gulp-livereload.git"
   },
   "scripts": {
     "test": "mocha"
