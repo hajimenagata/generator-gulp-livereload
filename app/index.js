@@ -1,11 +1,13 @@
 'use strict';
 var util   = require('util');
 var path   = require('path');
-var chalk  = require('chalk');
+//var chalk  = require('chalk');
 var yeoman = require('yeoman-generator');
 
+/*
 var greeting = chalk.cyan('\nlivereload') +
                   chalk.cyan('\ngulp');
+*/
 
 var MyGenerator = module.exports = function MyGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
