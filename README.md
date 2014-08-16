@@ -21,6 +21,12 @@ Finally, initiate the generator.
 $ yo gulp-livereload
 ```
 
+And start watch task with this.
+
+```
+$ gulp watch
+```
+
 ## License
 
 MIT License
