@@ -1,3 +1,1 @@
-(function () {
-    console.log('success!');
-})();
+console.log('Hello gulp-livereload!');
