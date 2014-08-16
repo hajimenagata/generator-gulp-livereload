@@ -4,8 +4,9 @@ var path   = require('path');
 var chalk  = require('chalk');
 var yeoman = require('yeoman-generator');
 
-var greeting = chalk.cyan('\nlivereload') +
-                  chalk.cyan('\ngulp');
+var greeting = chalk.cyan('\n--------------------------------------') +
+                  chalk.cyan('\ngulp-livereload') +
+                  chalk.cyan('\n--------------------------------------');
 
 var MyGenerator = module.exports = function MyGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
@@ -20,26 +21,24 @@ var MyGenerator = module.exports = function MyGenerator(args, options, config) {
 util.inherits(MyGenerator, yeoman.generators.Base);
 
 MyGenerator.prototype.askFor = function askFor() {
-    var cb = this.async();
 
-      console.log(this.yeoman);
-      console.log(greeting);
+  var cb = this.async();
 
-    var prompts = [{
-        type: 'input',
-        name: 'appname',
-        message: 'What is the name of your app?'
-      }];
+  console.log(this.yeoman);
+  console.log(greeting);
+
+  var prompts = [];
 
   this.prompt(prompts, function (props) {
-      this.appname = props.appname;
-      var features = props.features;
-
+    this.appname = props.appname;
+    var features = props.features;
     cb();
   }.bind(this));
+
 };
 
 MyGenerator.prototype.app = function app() {
+
     this.mkdir('app');
     this.mkdir('app/scripts');
     this.mkdir('app/styles');
@@ -49,6 +48,7 @@ MyGenerator.prototype.app = function app() {
     this.template('styles.css', 'app/styles/styles.css');
 
     this.copy('_package.json', 'package.json');
+    this.copy('_bower.json', 'bower.json');
 };
 
 MyGenerator.prototype.projectfiles = function projectfiles() {
