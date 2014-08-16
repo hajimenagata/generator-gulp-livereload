@@ -1,6 +1,6 @@
 {
   "name": "generator-gulp-livereload",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Yeoman webapp generator that leverages gulp streaming build system.",
   "keywords": [
     "yeoman-generator",
