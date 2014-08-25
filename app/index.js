@@ -27,11 +27,36 @@ MyGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
   console.log(greeting);
 
-  var prompts = [];
+  var prompts = [{
+    type: 'checkbox',
+    name: 'features',
+    message: 'What more would you like?',
+    choices: [{
+      name: 'Bootstrap',
+      value: 'includeBootstrap',
+      checked: true
+    },{
+      name: 'jQuery(v2.1.1)',
+      value: 'includeJQuery',
+      checked: false
+    },{
+      name: 'Modernizr(v2.8.2)',
+      value: 'includeModernizr',
+      checked: false
+    }]
+  }];
 
   this.prompt(prompts, function (props) {
     this.appname = props.appname;
     var features = props.features;
+
+    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
+    // manually deal with the response, get back and store the results.
+    // we change a bit this way of doing to automatically do this in the self.prompt() method.
+    this.includeJQuery = hasFeature('includeJQuery');
+    this.includeBootstrap = hasFeature('includeBootstrap');
+    this.includeModernizr = hasFeature('includeModernizr');
+
     cb();
   }.bind(this));
 
